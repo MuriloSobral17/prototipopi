@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,17 @@
             <img src="imgs/User-avatar-placeholder-white-blue-abstract-the-internet-log-in_430103_wh860.png" alt="imagen de cadatros">
             <h1>usuario</h1>
         </div>
-        <button type="button"></button>
+        <div id="Formulario">
+            <form action="/submit-cadastro" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br><br>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required><br><br>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
     </content>
     
 </body>
