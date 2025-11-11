@@ -3,11 +3,11 @@ package com.example.educatech.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="usuarios")
-public class Usuario {
+@Document(collection="alunos")
+public class Aluno {
 
     @Id
-    private String idUsuario;
+    private String idAluno;
     private String nome;
     private String nickname;
     private String email;
@@ -48,12 +48,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
+    public String getIdAluno() {
+        return idAluno;
     }
 
-    public void setIdUsuario(String idusuario) {
-        this.idUsuario = idusuario;
+    public void setIdAluno(String idaluno) {
+        this.idAluno = idaluno;
     }
 
     

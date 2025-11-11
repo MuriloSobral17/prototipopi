@@ -6,24 +6,24 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.educatech.model.Usuario;
-import com.example.educatech.repository.UsuarioRepository;
+import com.example.educatech.model.Aluno;
+import com.example.educatech.repository.AlunoRepository;
 
 @Service
-public class UsuarioService {
+public class AlunoService {
     
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private AlunoRepository usuarioRepository;
 
-    public List<Usuario> listarTodos(){
+    public List<Aluno> listarTodos(){
         return usuarioRepository.findAll();
     }
 
-    public Optional<Usuario> buscarPorId(String id){
+    public Optional<Aluno> buscarPorId(String id){
         return usuarioRepository.findById(id);
     }
 
-    public Usuario salvar(Usuario usuario){
+    public Aluno salvar(Aluno usuario){
         return usuarioRepository.save(usuario);
     }
 }

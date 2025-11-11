@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.educatech.model.Professor;
-import com.example.educatech.model.Usuario;
 import com.example.educatech.service.ProfessorService;
-import com.example.educatech.service.UsuarioService;
 
 public class ProfessorController {
     @Autowired
@@ -33,5 +31,4 @@ public class ProfessorController {
     public Professor criar(@RequestBody Professor professor){
         return professorService.salvar(professor);       
     } 
-
 }
