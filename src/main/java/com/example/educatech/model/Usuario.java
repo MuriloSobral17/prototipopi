@@ -7,17 +7,30 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario {
 
     @Id
-    private String id;
+    private String idUsuario;
     private String nome;
+    private String nickname;
     private String email;
+    private String senha;
 
-    public String getId() {
-        return id;
+    public String getSenha(){
+        return senha;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setSenha(String senha){
+        this.senha=senha;
     }
+
+    public String getNickName(){
+        return nickname;
+    }
+
+    public void setNickName(String nickname){
+        this.nickname = nickname;
+    }
+
+    
+
 
     public String getNome() {
         return nome;
@@ -33,6 +46,14 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idusuario) {
+        this.idUsuario = idusuario;
     }
 
     

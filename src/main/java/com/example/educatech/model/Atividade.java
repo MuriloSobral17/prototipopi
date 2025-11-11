@@ -14,11 +14,11 @@ public class Atividade {
     private String exemploEntrada;
     private String exemploSaida;
 
-    // Construtor vazio
+    
     public Atividade() {
     }
 
-    // Getters e Setters
+    
     public String getId() {
         return id;
     }
