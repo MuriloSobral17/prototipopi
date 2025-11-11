@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.educatech.model.Usuario;
-import com.example.educatech.service.UsuarioService;
+import com.example.educatech.model.Aluno;
+import com.example.educatech.service.AlunoService;
 
 
 @RestController
 @RequestMapping("/usuarios")
-public class UsuarioController {
+public class AlunoController {
     
     @Autowired
-    private UsuarioService usuarioService;
+    private AlunoService usuarioService;
 
     @GetMapping
-     public List<Usuario> listarTodos(){
+     public List<Aluno> listarTodos(){
         return usuarioService.listarTodos();
     }
 
     @GetMapping("/{id}")
-    public Optional<Usuario> buscarPorId(@PathVariable String id){
+    public Optional<Aluno> buscarPorId(@PathVariable String id){
         return usuarioService.buscarPorId(id);
     }
 
     @PostMapping
-    public Usuario criar(@RequestBody Usuario usuario){
+    public Aluno criar(@RequestBody Aluno usuario){
         return usuarioService.salvar(usuario);       
     } 
 }
