@@ -8,84 +8,68 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
- <div class="d-flex">
-    <aside id = "sidebar">
+
+<div class="d-flex">
+    <aside id="sidebar">
         <div class="sidebar-logo">
-            <a href="#">CodzSword</a>
+            <a>Educatech</a>
         </div>
-        <ul class="sidebar-nav p-0">
-            <li class="sidebar-header">
-                Tools e Components
-            </li>
+        <ul class="sidebar-nav text-bg-dark">
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
+                <a href="Conta.html">
                     <i class="lni lni-user-4"></i>
-                    <span>Profile</span>
+                    <span>Conta</span>
                 </a>
             </li>
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
-                    <i class="ini ini-user"></i>
-                    <span>Task</span>
+                <a href="atividades.html">
+                    <i class="lni lni-book-1"></i>
+                    <span>Atividades</span>
                 </a>
             </li>
-            <li class="sidebar-header">
-                pages
-            </li>
-            <li class="sidebar-item">
-                <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="true" aria-controls="auth">
-                    <i class="lni lni-shield-2"></i>
-                    <span>Auth</span>
                 </a>
-                <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebr">
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">Login</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">Register</a>
-                    </li>
+                <ul id="auth" class="sidebar-dropdown list-unstyled collapse">
+                    <li class="sidebar-item"><a href="#" class="sidebar-item"><a>#Register</a></li>
                 </ul>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni ini-popup">
-                            <span>Notification</span>
-                        </i>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="ini ini-cog"></i>
-                        <span>Setting</span>
-                    </a>
-                </li>
+            </li>
+            <li class="sidebar-item">
+                <a href="#"  class="lni lni-popup me-2"></i>
+                    <a href="Cadastro.html">
+                        <i class="lni lni-user-multiple-4"></i>
+                    <span>Notification</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="Configuraçoes.html">
+                    <i class="lni lni-gear-1"></i>
+                    <span>Configuração</span>
+                </a>
             </li>
         </ul>
-
         <div class="sidebar-footer">
-            <a href="#" class="ssidebar-link">
-                <i class="lni lni-exit"></i>
-                    <span>Setting</span>
-                </i>
+                <i class="lni lni-exit me-2"></i>
+                <span>Logout</span>
             </a>
         </div>
     </aside>
 
-    <div class="main">
-        <nav class="navbar navbar-expand-lg border-bottom">
-            <button class="toggler-btn" type="button">
-                <i class="lni lni-align-text-center"></i>
-            </button>
-        </nav>
-        <main class="p-3">
+    <div class="container">
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" >
             <div class="container-fluid">
-                <div class="mb-3 text-center">
-                    <h1>Educatech Bootstrap Sidebar</h1>
-                </div>
+                <button class="toggler-btn" type="button" id="sidebarToggle">
+                    <i class="lni lni-align-text-center"></i>
+                </button>
             </div>
-        </main>
+        </nav>
     </div>
- </div>
-     <script src="js/script.js"></script>
+</div>
+
+<script>
+    document.getElementById('sidebarToggle').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('collapsed');
+    });
+</script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
