@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurações</title>
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
+    <div class="d-flex">
+    <aside id="sidebar">
+        <div class="sidebar-logo">
+            <a>Educatech</a>
+        </div>
+        <ul class="sidebar-nav text-bg-dark">
+            <li class="sidebar-item">
+                <a href="Conta.html">
+                    <i class="lni lni-user-4"></i>
+                    <span>Conta</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="atividades.html">
+                    <i class="lni lni-book-1"></i>
+                    <span>Atividades</span>
+                </a>
+            </li>
+                </a>
+                <ul id="auth" class="sidebar-dropdown list-unstyled collapse">
+                    <li class="sidebar-item"><a href="#" class="sidebar-item"><a>#Register</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="#"  class="lni lni-popup me-2"></i>
+                    <a href="Cadastro.html">
+                        <i class="lni lni-user-multiple-4"></i>
+                    <span>Notification</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="Configuraçoes.html">
+                    <i class="lni lni-gear-1"></i>
+                    <span>Configuração</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+                <i class="lni lni-exit me-2"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="container">
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" >
+            <div class="container-fluid">
+                <button class="toggler-btn" type="button" id="sidebarToggle">
+                    <i class="lni lni-align-text-center"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<script>
+    document.getElementById('sidebarToggle').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('collapsed');
+    });
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
