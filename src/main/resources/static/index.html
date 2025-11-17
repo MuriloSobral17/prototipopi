@@ -42,7 +42,7 @@
             <li class="sidebar-item">
                 <a href="Configuraçoes.html">
                     <i class="lni lni-gear-1"></i>
-                    <span>Configuração</span>
+                    <span>Ajudes</span>
                 </a>
             </li>
         </ul>
@@ -63,6 +63,30 @@
         </nav>
     </div>
 </div>
+
+<script>
+const mapa = document.getElementById('mapa');
+
+// Exemplo de matriz do nível (10x10)
+const level = [
+  ['grass','grass','grass','grass','wall','wall','grass','grass','grass','grass'],
+  ['grass','water','water','grass','wall','wall','grass','water','water','grass'],
+  ['grass','grass','grass','grass','grass','grass','grass','grass','grass','grass'],
+  ['wall','wall','grass','grass','grass','grass','grass','grass','wall','wall'],
+  ['grass','grass','grass','water','water','water','grass','grass','grass','grass'],
+  ['grass','grass','grass','grass','grass','grass','grass','grass','grass','grass'],
+  ['grass','wall','wall','grass','grass','grass','wall','wall','grass','grass'],
+  ['grass','grass','grass','grass','grass','grass','grass','grass','grass','grass'],
+  ['grass','water','water','grass','wall','wall','grass','water','water','grass'],
+  ['grass','grass','grass','grass','wall','wall','grass','grass','grass','grass']
+];
+
+  {
+    const tile = document.createElement('div');
+    tile.classList.add('tile', tileType);
+    mapa.appendChild(tile);
+  };
+</script>
 
 <script>
     document.getElementById('sidebarToggle').addEventListener('click', function () {
