@@ -4,38 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educatech</title>
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <img src="imgs/Gemini_Generated_Image_y9e0xuy9e0xuy9e0-removebg-preview.png" alt="educatech logo" width=90px height=90px>
-  <a class="navbar-brand" href="#" >Educatech</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link do github</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+<div class="d-flex">
+    <aside id="sidebar">
+        <div class="sidebar-logo">
+            <a>Educatech</a>
         </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-</body>
+        <ul class="sidebar-nav text-bg-dark">
+            <li class="sidebar-item">
+                <a href="Conta.html">
+                    <i class="lni lni-user-4"></i>
+                    <span>Conta</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="atividades.html">
+                    <i class="lni lni-book-1"></i>
+                    <span>Atividades</span>
+                </a>
+            </li>
+                </a>
+                <ul id="auth" class="sidebar-dropdown list-unstyled collapse">
+                    <li class="sidebar-item"><a href="#" class="sidebar-item"><a>#Register</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="#"  class="lni lni-popup me-2"></i>
+                    <a href="Cadastro.html">
+                        <i class="lni lni-user-multiple-4"></i>
+                    <span>Notification</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="Configuraçoes.html">
+                    <i class="lni lni-gear-1"></i>
+                    <span>Configuração</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+                <i class="lni lni-exit me-2"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="container">
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" >
+            <div class="container-fluid">
+                <button class="toggler-btn" type="button" id="sidebarToggle">
+                    <i class="lni lni-align-text-center"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<script>
+    document.getElementById('sidebarToggle').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('collapsed');
+    });
+</script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
