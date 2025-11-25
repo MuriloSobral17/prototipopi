@@ -12,12 +12,19 @@
   .container{
 	border-radius: 5px;
 	font-family: 'Montserrat', sans-serif;
+  margin: 10px;
+}
+
+h2 {
+  color: #333;
+  font-weight: 10px;
+
 }
 </style>
 
 <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Minha Marca</a>
+    <a class="navbar-brand fw-bold" href="#">Educar Teach</a>
     <form class="d-flex" role="search">
       <button class="btn btn-outline-success" type="submit">Entrar</button>
     </form>
@@ -39,7 +46,12 @@
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <iinput type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputtelephone" class="form-label">Telefone</label>
+            <input type="telfoner" class="form-control" id="exampleInputtelephone">
           </div>
 
           <div class="mb-3">
@@ -54,11 +66,13 @@
               <option value="#">Professor</option>
             </select>
           </div>
-  
+          
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
           </div>
         </form>
+
+        <div class="mb-3"></div>
         
       </div>
 
@@ -66,13 +80,6 @@
   </div>
 </div>
 
-
-
-
-<div class="sidebar-footer">
-  <i class="lni lni-exit me-2"></i>
-  <span>Logout</span>
-</div>
 
 <script>
     document.getElementById('sidebarToggle').addEventListener('click', function () {
