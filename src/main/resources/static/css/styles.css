@@ -1,4 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+mapa {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 1px;
+    background: #333;
+    margin-top: 20px;
+}
+
+.tile {
+    width: 40px;
+    height: 40px;
+}
+
+.grass { background: green; }
+.water { background: blue; }
+.wall { background: gray; }
 
 
 #sidebar.collapsed {
@@ -7,13 +29,13 @@
 }
 
 .sidebar-logo {
-	padding: 15px;
+	padding: 10px;
 	font-size: 20px;
 	text-align: center;
 	background: rgb(234,120,59);
 }
 .sidebar-nav {
-	padding: 10px 15px;
+	padding: 15px 25px;
 	background: rgb(8, 5, 3);
 	list-style: none;
 	padding: 0;
