@@ -80,6 +80,79 @@ h2 {
   </div>
 </div>
 
+<script>
+
+  const apiUrl = "http://localhost:8080/Conta"; 
+  const form = document.getElementById("userForm"); 
+
+   // Listar usuários 
+
+  async function carregarUsuarios() { 
+
+  try { 
+  const res = await fetch(apiUrl); 
+  const usuarios = await res.json(); 
+  table.innerHTML = ""; 
+  usuarios.forEach(u => { 
+    const tr = document.createElement("tr"); 
+    tr.innerHTML = ` 
+    <td>${u.nome}</td> 
+    <td>${u.email}</td> 
+    <td class="actions">
+    </td>`; 
+    table.appendChild(tr); 
+      }); } catch (error) { console.error("Erro ao carregar usuários:", error);} 
+  } 
+  
+  // Criar ou atualizar 
+  
+  form.addEventListener("submit", async (e) => { 
+    e.preventDefault(); 
+    const id = document.getElementById("userId").value; 
+    const nome = document.getElementById("nome").value; 
+    const email = document.getElementById("email").value; 
+    const usuario = { nome, email }; 
+    try { 
+      if (id) { 
+         // Atualiza usuário existente 
+         await fetch(`${apiUrl}/${id}`, {  method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(usuario)}); 
+        } else { 
+              // Cria novo usuário 
+              await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(usuario)}); 
+            } 
+            
+        // Limpa formulário e atualiza tabela 
+        novoUsuario(); 
+        carregarUsuarios(); 
+      
+      } catch (error) { console.error("Erro ao salvar usuário:", error);} 
+    }); 
+    
+    // Editar usuário 
+    function editarUsuario(id, nome, email) { 
+      document.getElementById("userId").value = id; 
+      document.getElementById("nome").value = nome; 
+      document.getElementById("email").value = email; 
+    } 
+    
+    // Limpar formulário para novo usuário 
+    
+    function novoUsuario() { form.reset(); document.getElementById("userId").value = "";} 
+    
+    // Deletar usuário 
+    async function deletarUsuario(id) { 
+      if (confirm("Deseja excluir este usuário?")) { try { await fetch(`${apiUrl}/${id}`, 
+      { method: "DELETE" }); 
+      
+      carregarUsuarios(); } catch (error) { console.error("Erro ao deletar usuário:", error); } 
+      } 
+     } 
+     
+     // Inicializa tabela 
+     carregarUsuarios(); 
+
+</script> 
+
 
 <script>
     document.getElementById('sidebarToggle').addEventListener('click', function () {
