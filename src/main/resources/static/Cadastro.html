@@ -38,35 +38,34 @@ h2 {
       <div class="card p-4">
         <h2 class="text-center mb-4">Criar Conta</h2>
         
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputNome" class="form-label">Nome Completo</label>
-            <input type="text"  class="form-control" id="exampleInputNome">
-          </div>
+      <form id="userForm">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome Completo</label>
+          <input type="text" class="form-control" id="nome" name="nome">
+        </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
+        
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email">
 
-          <div class="mb-3">
-            <label for="exampleInputtelephone" class="form-label">Telefone</label>
-            <input type="telfoner" class="form-control" id="exampleInputtelephone">
-          </div>
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="tel" class="form-control" id="telefone" name="telefone">
+        </div>
 
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
 
-          <div class="mb-3">
-            <label for="disabledSelect" class="form-label">Disabled select menu</label>
-            <select id="disabledSelect" class="form-select">
-              <option value="#">Aluno</option>
-              <option value="#">Professor</option>
-            </select>
-          </div>
-          
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="senha" name="senha">
+        </div>
+
+        <div class="mb-3">
+          <label for="tipo" class="form-label">Tipo</label>
+          <select id="tipo" class="form-select" name="tipo">
+            <option value="Aluno">Aluno</option>
+            <option value="Professor">Professor</option>
+        </div>
+
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
           </div>
@@ -82,74 +81,34 @@ h2 {
 
 <script>
 
-  const apiUrl = "http://localhost:8080/Conta"; 
-  const form = document.getElementById("userForm"); 
+const apiUrl = "http://localhost:8080/Conta";
+const form = document.getElementById("userForm");
 
-   // Listar usuários 
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-  async function carregarUsuarios() { 
+  const usuario = {
+    nome: document.getElementById("nome").value,
+    email: document.getElementById("email").value,
+    telefone: document.getElementById("telefone").value,
+    senha: document.getElementById("senha").value,
+    tipo: document.getElementById("tipo").value
+  };
 
-  try { 
-  const res = await fetch(apiUrl); 
-  const usuarios = await res.json(); 
-  table.innerHTML = ""; 
-  usuarios.forEach(u => { 
-    const tr = document.createElement("tr"); 
-    tr.innerHTML = ` 
-    <td>${u.nome}</td> 
-    <td>${u.email}</td> 
-    <td class="actions">
-    </td>`; 
-    table.appendChild(tr); 
-      }); } catch (error) { console.error("Erro ao carregar usuários:", error);} 
-  } 
-  
-  // Criar ou atualizar 
-  
-  form.addEventListener("submit", async (e) => { 
-    e.preventDefault(); 
-    const id = document.getElementById("userId").value; 
-    const nome = document.getElementById("nome").value; 
-    const email = document.getElementById("email").value; 
-    const usuario = { nome, email }; 
-    try { 
-      if (id) { 
-         // Atualiza usuário existente 
-         await fetch(`${apiUrl}/${id}`, {  method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(usuario)}); 
-        } else { 
-              // Cria novo usuário 
-              await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(usuario)}); 
-            } 
-            
-        // Limpa formulário e atualiza tabela 
-        novoUsuario(); 
-        carregarUsuarios(); 
-      
-      } catch (error) { console.error("Erro ao salvar usuário:", error);} 
-    }); 
-    
-    // Editar usuário 
-    function editarUsuario(id, nome, email) { 
-      document.getElementById("userId").value = id; 
-      document.getElementById("nome").value = nome; 
-      document.getElementById("email").value = email; 
-    } 
-    
-    // Limpar formulário para novo usuário 
-    
-    function novoUsuario() { form.reset(); document.getElementById("userId").value = "";} 
-    
-    // Deletar usuário 
-    async function deletarUsuario(id) { 
-      if (confirm("Deseja excluir este usuário?")) { try { await fetch(`${apiUrl}/${id}`, 
-      { method: "DELETE" }); 
-      
-      carregarUsuarios(); } catch (error) { console.error("Erro ao deletar usuário:", error); } 
-      } 
-     } 
-     
-     // Inicializa tabela 
-     carregarUsuarios(); 
+  try {
+    await fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(usuario)
+    });
+
+    alert("Usuário cadastrado com sucesso!");
+    form.reset();
+  } catch (error) {
+    console.error("Erro ao salvar usuário:", error);
+    alert("Erro ao cadastrar usuário.");
+  }
+});
 
 </script> 
 
